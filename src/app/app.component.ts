@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, Inject} from '@angular/core';
+import {CommonModule, DOCUMENT} from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {TodoListComponent} from "./components/todo-list/todo-list.component";
 
@@ -11,5 +11,9 @@ import {TodoListComponent} from "./components/todo-list/todo-list.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
+  constructor(@Inject(DOCUMENT) document: Document) {
+    setTimeout(()=> {
+      document.body.classList.add('welcome')
+    })
+  }
 }

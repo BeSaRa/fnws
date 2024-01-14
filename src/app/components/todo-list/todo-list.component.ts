@@ -1,22 +1,13 @@
-import {Component, Inject, inject} from '@angular/core';
-import {CommonModule, DOCUMENT} from '@angular/common';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
 export class TodoListComponent {
   todos: { id: number }[] = []
-
-  httpClient = inject(HttpClient)
-
-  constructor(@Inject(DOCUMENT) document: Document) {
-
-    console.log(document.URL);
-  }
 }

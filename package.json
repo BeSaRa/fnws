@@ -13,7 +13,8 @@
     "test": "ng test",
     "serve:ssr:todo": "node dist/todo/server/server.mjs",
     "lint": "ng lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "version": "node bin/version.js"
   },
   "private": true,
   "dependencies": {

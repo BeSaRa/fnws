@@ -21,8 +21,4 @@ describe('AppComponent', () => {
   it(`should have router-outlet component`, () => {
     expect(ele.querySelector('router-outlet')).toBeTruthy()
   })
-
-  it('should have app-todo-list', () => {
-    expect(ele.querySelector('app-todo-list')).toBeTruthy()
-  })
 })

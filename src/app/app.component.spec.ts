@@ -1,5 +1,5 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {AppComponent} from './app.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { AppComponent } from './app.component'
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>
@@ -9,20 +9,20 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents()
-    fixture = TestBed.createComponent(AppComponent);
-    app = fixture.componentInstance;
+    fixture = TestBed.createComponent(AppComponent)
+    app = fixture.componentInstance
     ele = fixture.nativeElement as HTMLElement
-  });
+  })
 
   it('should create the app', () => {
     expect(app).toBeTruthy()
-  });
+  })
 
   it(`should have router-outlet component`, () => {
     expect(ele.querySelector('router-outlet')).toBeTruthy()
-  });
+  })
 
   it('should have app-todo-list', () => {
     expect(ele.querySelector('app-todo-list')).toBeTruthy()
-  });
-});
+  })
+})

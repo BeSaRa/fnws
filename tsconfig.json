@@ -23,6 +23,9 @@
       "dom"
     ],
     "paths": {
+      "@/inits/*": [
+        "./src/inits"
+      ],
       "@/abstracts/*": [
         "./src/abstracts/*"
       ],
@@ -33,7 +36,7 @@
         "./src/components/*"
       ],
       "@/configs/*": [
-        "./src/configs/*"
+        "./src/app-configs/*"
       ],
       "@/constants/*": [
         "./src/constants/*"

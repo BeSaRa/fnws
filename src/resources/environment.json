@@ -1,0 +1,6 @@
+{
+  "ENVIRONMENTS_URLS": {
+    "DEV": "url to the dev environment"
+  },
+  "BASE_ENVIRONMENT": "DEV"
+}

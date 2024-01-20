@@ -1,8 +1,8 @@
-import { CloneContract } from '../contracts/clone-contract'
 import {
   AbstractConstructorType,
   ConstructorType,
-} from '../types/constructor-type'
+} from '@/types/constructor-type'
+import { CloneContract } from '@/contracts/clone-contract'
 
 type CanClone = ConstructorType<CloneContract> &
   AbstractConstructorType<CloneContract>

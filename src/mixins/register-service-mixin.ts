@@ -1,8 +1,8 @@
 import {
   AbstractConstructorType,
   ConstructorType,
-} from '../types/constructor-type'
-import { ServiceRegistry } from '../services/service-registry'
+} from '@/types/constructor-type'
+import { ServiceRegistry } from '@/services/service-registry'
 
 export function RegisterServiceMixin<T extends AbstractConstructorType<object>>(
   base: T,

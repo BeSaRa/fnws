@@ -1,9 +1,9 @@
-import { HasServiceNameContract } from '../contracts/has-service-name-contract'
-import { ServiceRegistry } from '../services/service-registry'
 import {
   AbstractConstructorType,
   ConstructorType,
-} from '../types/constructor-type'
+} from '@/types/constructor-type'
+import { HasServiceNameContract } from '@/contracts/has-service-name-contract'
+import { ServiceRegistry } from '@/services/service-registry'
 
 type CanGetService = ConstructorType<HasServiceNameContract> &
   AbstractConstructorType<HasServiceNameContract>

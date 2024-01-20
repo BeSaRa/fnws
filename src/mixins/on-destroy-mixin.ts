@@ -1,9 +1,9 @@
 import { Subject } from 'rxjs'
-import { HasDestroySubjectContract } from '../contracts/has-destroy-subject-contract'
+import { HasDestroySubjectContract } from '@/contracts/has-destroy-subject-contract'
 import {
   AbstractConstructorType,
   ConstructorType,
-} from '../types/constructor-type'
+} from '@/types/constructor-type'
 
 type CanDestroy = ConstructorType<HasDestroySubjectContract> &
   AbstractConstructorType<HasDestroySubjectContract>

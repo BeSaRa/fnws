@@ -14,7 +14,8 @@
     "serve:ssr:todo": "node dist/todo/server/server.mjs",
     "lint": "ng lint",
     "prepare": "husky install",
-    "version": "node bin/version.js"
+    "version": "node bin/version.js",
+    "json:server": "npx json-server db/db.json"
   },
   "private": true,
   "dependencies": {
@@ -54,6 +55,7 @@
     "eslint-plugin-prettier": "^5.1.3",
     "husky": "^8.0.3",
     "jasmine-core": "~5.1.0",
+    "json-server": "^1.0.0-alpha.21",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",

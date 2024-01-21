@@ -23,6 +23,9 @@
       "dom"
     ],
     "paths": {
+      "@/models/*": [
+        "./src/models/*"
+      ],
       "@/inits/*": [
         "./src/inits"
       ],

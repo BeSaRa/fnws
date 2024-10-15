@@ -23,6 +23,12 @@
       "dom"
     ],
     "paths": {
+      "@/stores/*": [
+        "./src/stores/*"
+      ],
+      "@/directives/*": [
+        "./src/directives/*"
+      ],
       "@/models/*": [
         "./src/models/*"
       ],

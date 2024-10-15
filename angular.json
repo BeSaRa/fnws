@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "todo": {
+    "fnws": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/todo",
+            "outputPath": "dist/fnws",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "todo:build:production"
+              "buildTarget": "fnws:build:production"
             },
             "development": {
-              "buildTarget": "todo:build:development"
+              "buildTarget": "fnws:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "todo:build"
+            "buildTarget": "fnws:build"
           }
         },
         "test": {

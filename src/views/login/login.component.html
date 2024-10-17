@@ -1,3 +1,39 @@
-<div class="w-full h-full relative flex bg-outside bg-cover bg-center bg-no-repeat">
-  <div id="particles-js" class="w-full h-full absolute inset-0"></div>
+<div class="w-full h-full relative flex items-center justify-center bg-outside bg-cover bg-center bg-no-repeat">
+  <div id="particles-js" class="w-full h-full absolute z-0 inset-0"></div>
+  <div
+    id="login-form"
+    class="min-w-[90%] bg-[#e5e7ea] shadow-2xl grid grid-cols-1 md:grid-cols-2 grid-rows-1 max-w-[90%] justify-stretch min-h-[450px] max-h-[100%] gap-6 p-4 rounded-lg md:min-w-[800px] relative z-0">
+    <div class="absolute bg-secondary p-4 -top-4 rotate-45 -translate-x-1/2 left-1/2"></div>
+    <div class="flex flex-col">
+      <div class="flex items-center mb-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-20" fill="currentColor" viewBox="0 0 256 256">
+          <path
+            d="M224,52H32A12,12,0,0,0,20,64V88a12,12,0,0,0,12,12h4v92a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V100h4a12,12,0,0,0,12-12V64A12,12,0,0,0,224,52ZM212,192a4,4,0,0,1-4,4H48a4,4,0,0,1-4-4V100H212ZM228,88a4,4,0,0,1-4,4H32a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H224a4,4,0,0,1,4,4ZM100,136a4,4,0,0,1,4-4h48a4,4,0,0,1,0,8H104A4,4,0,0,1,100,136Z"></path>
+        </svg>
+        <h1 class="text-2xl font-semibold">إدارة خدمة الارشفة الالكترونية</h1>
+      </div>
+      <form name="login" autocomplete="off" novalidate class="flex w-full items-stretch gap-4 flex-auto flex-col">
+        <span>سجل الدخول إلى حسابك</span>
+        <div class="flex gap-2 flex-col">
+          <label class="font-semibold" for="username">اسم المستخدم</label>
+          <input
+            type="text"
+            class="border-white outline-none focus:ring-2 bg-gray-100 border rounded-md p-2"
+            id="username" />
+        </div>
+        <div class="flex gap-2 flex-col">
+          <label class="font-semibold" for="password">كلمة المرور</label>
+          <input
+            type="password"
+            class="border-white outline-none focus:ring-2 bg-gray-100 border rounded-md p-2"
+            id="password" />
+        </div>
+        <button
+          class="bg-primary hover:bg-primary-900 active:bg-primary focus:ring-2 outline-none text-white mt-auto rounded-md p-2">
+          تسجل الدخول
+        </button>
+      </form>
+    </div>
+    <div class="bg-cover hidden md:flex items-start justify-center rounded-lg bg-bottom bg-inside"></div>
+  </div>
 </div>

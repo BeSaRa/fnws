@@ -8,6 +8,8 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+@import 'styles/fonts';
+
 // Define the theme object.
 $fnws-theme: mat.define-theme(
   (

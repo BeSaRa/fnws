@@ -7,6 +7,9 @@ module.exports = {
         outside: 'url(assets/images/bg-outside.png)',
         inside: 'url(assets/images/bg-inside.png)',
       },
+      fontFamily: {
+        lusail: ['Lusail', 'sans-serif'],
+      },
       colors: {
         primary: {
           DEFAULT: '#1e233c',

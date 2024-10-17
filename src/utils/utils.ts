@@ -1,13 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { FormControlDirective, FormControlName, NgModel } from '@angular/forms'
-import {
-  catchError,
-  filter,
-  MonoTypeOperatorFunction,
-  Observable,
-  of,
-} from 'rxjs'
+import { catchError, filter, MonoTypeOperatorFunction, Observable, of } from 'rxjs'
 
 /**
  * to check if the NgControl is NgModel
@@ -21,9 +15,7 @@ export function isNgModel(control: unknown): control is NgModel {
  * to check if the NgControl is FormControlDirective
  * @param control
  */
-export function isFormControlDirective(
-  control: unknown,
-): control is FormControlDirective {
+export function isFormControlDirective(control: unknown): control is FormControlDirective {
   return control instanceof FormControlDirective
 }
 
@@ -31,9 +23,7 @@ export function isFormControlDirective(
  * to check if the NgControl is FormControlName
  * @param control
  */
-export function isFormControlName(
-  control: unknown,
-): control is FormControlName {
+export function isFormControlName(control: unknown): control is FormControlName {
   return control instanceof FormControlName
 }
 
@@ -45,10 +35,10 @@ export function ignoreErrors<T>(debug = false): MonoTypeOperatorFunction<T> {
   return (source: Observable<T>) => {
     return source
       .pipe(
-        catchError((error) => {
+        catchError(error => {
           debug && console.log(error)
           return of('CUSTOM_ERROR' as T)
-        }),
+        })
       )
       .pipe(filter<T>((value): value is T => value !== 'CUSTOM_ERROR'))
   }
@@ -72,10 +62,7 @@ export function arrayChunk<T>(arr: T[], bulkSize = 3): T[][] {
  * @param title
  * @param namesList
  */
-export function generateHtmlList(
-  title: string,
-  namesList: string[],
-): HTMLDivElement {
+export function generateHtmlList(title: string, namesList: string[]): HTMLDivElement {
   const div = document.createElement('div')
   div.classList.add('dynamic-list-container')
 
@@ -103,10 +90,7 @@ export function printBlobData(data: Blob, fileName?: string): void {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if ((window.navigator as any).msSaveOrOpenBlob) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ;(window.navigator as any).msSaveOrOpenBlob(
-      data,
-      fileName ?? 'customs-' + new Date().valueOf() + '.pdf',
-    )
+    ;(window.navigator as any).msSaveOrOpenBlob(data, fileName ?? 'customs-' + new Date().valueOf() + '.pdf')
   } else {
     const a: HTMLAnchorElement = document.createElement('a')
     const url = URL.createObjectURL(data)
@@ -126,9 +110,7 @@ export function printBlobData(data: Blob, fileName?: string): void {
  * Value to check for validity
  */
 export function isValidValue(value: unknown): boolean {
-  return typeof value === 'string'
-    ? value.trim() !== ''
-    : typeof value !== 'undefined' && value !== null
+  return typeof value === 'string' ? value.trim() !== '' : typeof value !== 'undefined' && value !== null
 }
 
 /**
@@ -162,12 +144,12 @@ export function isEmptyObject(objectToCheck: object): boolean {
  * Object to check for property values
  */
 export function objectHasValue(objectToCheck: object): boolean {
-  return Object.values(objectToCheck).some((value) => isValidValue(value))
+  return Object.values(objectToCheck).some(value => isValidValue(value))
 }
 
 export function objectHasOwnProperty<O, P extends PropertyKey>(
   object: O,
-  property: P,
+  property: P
 ): object is O & Record<P, unknown> {
   return Object.prototype.hasOwnProperty.call(object, property)
 }
@@ -175,11 +157,7 @@ export function objectHasOwnProperty<O, P extends PropertyKey>(
 export function generateUUID() {
   // Public Domain/MIT
   let d = new Date().getTime() //Timestamp
-  let d2 =
-    (typeof performance !== 'undefined' &&
-      performance.now &&
-      performance.now() * 1000) ||
-    0 //Time in microseconds since page-load or 0 if unsupported
+  let d2 = (typeof performance !== 'undefined' && performance.now && performance.now() * 1000) || 0 //Time in microseconds since page-load or 0 if unsupported
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     let r = Math.random() * 16 //random number between 0 and 16
     if (d > 0) {
@@ -205,5 +183,4 @@ export function chunks<T>(arr: T[], n: number): T[][] {
   return [...generateChunks(arr, n)]
 }
 
-export const range = (start: number, stop: number) =>
-  Array.from({ length: stop - start + 1 }, (_, i) => start + i)
+export const range = (start: number, stop: number) => Array.from({ length: stop - start + 1 }, (_, i) => start + i)

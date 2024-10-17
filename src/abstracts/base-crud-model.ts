@@ -13,11 +13,7 @@ export abstract class BaseCrudModel<
     PrimaryKey = number,
   >
   extends HasServiceMixin(ClonerMixin(class {}))
-  implements
-    BaseModelContract,
-    CloneContract,
-    BaseCrudModelContract<Model, PrimaryKey>,
-    HasServiceNameContract
+  implements BaseModelContract, CloneContract, BaseCrudModelContract<Model, PrimaryKey>, HasServiceNameContract
 {
   id!: PrimaryKey
   abstract override $$__service_name__$$: string

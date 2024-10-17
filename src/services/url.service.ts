@@ -19,9 +19,7 @@ export class UrlService {
   }
 
   static removeTrailingSlash(url: string): string {
-    return UrlService.hasTrailingSlash(url)
-      ? (url + '').substring(0, (url + '').length - 1)
-      : url
+    return UrlService.hasTrailingSlash(url) ? (url + '').substring(0, (url + '').length - 1) : url
   }
 
   static removePrefixSlash(url: string): string {
@@ -33,27 +31,18 @@ export class UrlService {
   public prepareUrls(): EndpointsType {
     this.URLS.BASE_URL = UrlService.removeTrailingSlash(this.config.BASE_URL)
     for (const key in this.urls) {
-      if (
-        key !== 'BASE_URL' &&
-        Object.prototype.hasOwnProperty.call(this.urls, key)
-      ) {
-        this.URLS[key as keyof EndpointsType] = this.addBaseUrl(
-          this.urls[key as keyof EndpointsType],
-        )
+      if (key !== 'BASE_URL' && Object.prototype.hasOwnProperty.call(this.urls, key)) {
+        this.URLS[key as keyof EndpointsType] = this.addBaseUrl(this.urls[key as keyof EndpointsType])
       }
     }
     return this.URLS
   }
 
   private addBaseUrl(url: string): string {
-    const external = (this.config.CONFIG.EXTERNAL_PROTOCOLS ?? []).some(
-      (protocol) => {
-        return url.toLowerCase().indexOf(protocol) === 0
-      },
-    )
-    return external
-      ? url
-      : this.URLS.BASE_URL + '/' + UrlService.removePrefixSlash(url)
+    const external = (this.config.CONFIG.EXTERNAL_PROTOCOLS ?? []).some(protocol => {
+      return url.toLowerCase().indexOf(protocol) === 0
+    })
+    return external ? url : this.URLS.BASE_URL + '/' + UrlService.removePrefixSlash(url)
   }
 
   setConfigService(service: ConfigService): void {

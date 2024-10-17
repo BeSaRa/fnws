@@ -9,7 +9,7 @@ export default {
     return () =>
       forkJoin([configService.load()]).pipe(
         tap(() => urlService.setConfigService(configService)),
-        tap(() => urlService.prepareUrls()),
+        tap(() => urlService.prepareUrls())
       )
   },
   deps: [ConfigService, UrlService],

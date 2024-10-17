@@ -14,9 +14,9 @@ export class ConfigService {
   load(): Observable<ConfigType> {
     return this.http
       .get<ConfigType>('resources/environment.json')
-      .pipe(tap((res) => (this.CONFIG = { ...this.CONFIG, ...res })))
+      .pipe(tap(res => (this.CONFIG = { ...this.CONFIG, ...res })))
       .pipe(tap(() => this.prepareBaseUrl()))
-      .pipe(tap((c) => console.log(c)))
+      .pipe(tap(c => console.log(c)))
   }
 
   private prepareBaseUrl(): string {
@@ -25,36 +25,29 @@ export class ConfigService {
       !Object.keys(this.CONFIG.ENVIRONMENTS_URLS).length
     ) {
       throw Error(
-        'There is no ENVIRONMENTS_URLS Property or empty provided inside resources/environment.json file Kindly check it',
+        'There is no ENVIRONMENTS_URLS Property or empty provided inside resources/environment.json file Kindly check it'
       )
     }
 
     if (typeof this.CONFIG.BASE_ENVIRONMENT === 'undefined') {
-      throw Error(
-        'there is no BASE_ENVIRONMENT_INDEX provided inside resources/environment.json file',
-      )
+      throw Error('there is no BASE_ENVIRONMENT_INDEX provided inside resources/environment.json file')
     }
 
     if (
       typeof this.CONFIG.ENVIRONMENTS_URLS[
-        this.CONFIG
-          .BASE_ENVIRONMENT as unknown as keyof typeof this.CONFIG.ENVIRONMENTS_URLS
+        this.CONFIG.BASE_ENVIRONMENT as unknown as keyof typeof this.CONFIG.ENVIRONMENTS_URLS
       ] === 'undefined'
     ) {
       throw Error(
-        'the provided BASE_ENVIRONMENT not exists inside ENVIRONMENTS_URLS array in resources/environment.json file',
+        'the provided BASE_ENVIRONMENT not exists inside ENVIRONMENTS_URLS array in resources/environment.json file'
       )
     }
     this.BASE_URL =
       this.CONFIG.ENVIRONMENTS_URLS[
-        this.CONFIG
-          .BASE_ENVIRONMENT as unknown as keyof typeof this.CONFIG.ENVIRONMENTS_URLS
+        this.CONFIG.BASE_ENVIRONMENT as unknown as keyof typeof this.CONFIG.ENVIRONMENTS_URLS
       ]
 
-    if (
-      Object.prototype.hasOwnProperty.call(this.CONFIG, 'API_VERSION') &&
-      this.CONFIG.API_VERSION
-    ) {
+    if (Object.prototype.hasOwnProperty.call(this.CONFIG, 'API_VERSION') && this.CONFIG.API_VERSION) {
       if (this.BASE_URL.lastIndexOf('/') !== this.BASE_URL.length - 1) {
         this.BASE_URL += '/'
       }

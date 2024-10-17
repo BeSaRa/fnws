@@ -6,6 +6,7 @@ import { provideInterceptors } from 'cast-response'
 import { GeneralInterceptor } from '@/model-interceptors/general-interceptor'
 import configInit from '../inits/config.init'
 import { provideHttpClient, withFetch } from '@angular/common/http'
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +14,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideRouter(routes),
     provideClientHydration(),
+
     provideInterceptors([GeneralInterceptor]),
+    provideAnimationsAsync(),
   ],
 }

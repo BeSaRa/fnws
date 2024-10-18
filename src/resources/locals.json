@@ -34,5 +34,9 @@
  "localization": {
   "ar": "التعريب",
   "en": "Localization"
+ },
+ "title": {
+  "ar": "إدارة خدمة الارشفة الالكترونية",
+  "en": "FileNet Archiving Service Administration"
  }
 }

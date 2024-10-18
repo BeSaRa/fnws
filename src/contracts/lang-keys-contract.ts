@@ -8,4 +8,5 @@ export interface LangKeysContract {
   save: string
   login_to_your_account: string
   login: string
+  title: string
 }

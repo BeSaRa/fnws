@@ -3,7 +3,7 @@ export const Config = {
   BASE_ENVIRONMENT: '',
   ENVIRONMENTS_URLS: {},
   BASE_URL: '',
-  API_VERSION: 'v1',
+  API_VERSION: '',
   EXTERNAL_PROTOCOLS: ['http', 'https'],
   TOKEN_HEADER_KEY: 'Authorization',
 }

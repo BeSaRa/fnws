@@ -18,6 +18,7 @@ export class LocalPopupComponent implements OnInit {
   lang = inject(LocalService)
   fb = inject(FormBuilder)
   ref = inject(MatDialogRef)
+
   form = this.fb.nonNullable.group({
     key: ['', Validators.required],
     ar: ['', Validators.required],

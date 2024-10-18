@@ -1,6 +1,6 @@
 {
   "ENVIRONMENTS_URLS": {
-    "DEV": "http://localhost:3000"
+    "DEV": "http://192.168.51.4:9080/fnwsui"
   },
   "API_VERSION": "",
   "BASE_ENVIRONMENT": "DEV"

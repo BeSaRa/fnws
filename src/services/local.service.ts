@@ -43,8 +43,8 @@ export class LocalService {
 
   private changeLanguage(lang: 'ar' | 'en'): void {
     this.currentLanguage = lang
-    this.langChange$.next(lang)
     this.prepareCurrentLocal()
+    this.langChange$.next(lang)
   }
 
   toggleLanguage(): void {

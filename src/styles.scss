@@ -41,3 +41,29 @@ $fnws-theme: mat.define-theme(
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mat-mdc-dialog-surface {
+  overflow: hidden;
+}
+
+.dialog-container {
+  @apply w-[calc(100vw-32px)] md:w-[600px];
+}
+
+:root {
+  --mdc-dialog-container-shape: theme(borderRadius.md);
+  --mat-dialog-container-max-width: unset;
+  --mdc-protected-button-container-shape: theme(borderRadius.md);
+}
+
+.mat-mdc-raised-button.primary:not(:disabled),
+.mat-mdc-raised-button.primary:active {
+  --mdc-protected-button-container-color: theme(colors.primary.DEFAULT);
+  --mdc-protected-button-label-text-color: theme(colors.white);
+  &:hover {
+    --mdc-protected-button-container-color: theme(colors.primary.900);
+    &:active {
+      --mdc-protected-button-container-color: theme(colors.primary.DEFAULT);
+    }
+  }
+}

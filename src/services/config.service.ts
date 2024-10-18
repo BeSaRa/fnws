@@ -16,7 +16,6 @@ export class ConfigService {
       .get<ConfigType>('resources/environment.json')
       .pipe(tap(res => (this.CONFIG = { ...this.CONFIG, ...res })))
       .pipe(tap(() => this.prepareBaseUrl()))
-      .pipe(tap(c => console.log(c)))
   }
 
   private prepareBaseUrl(): string {

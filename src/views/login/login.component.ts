@@ -1,5 +1,6 @@
-import { afterNextRender, Component } from '@angular/core'
+import { afterNextRender, Component, inject } from '@angular/core'
 import { particlesConfig } from '@/constants/particles-config'
+import { LocalService } from '@/services/local.service'
 
 declare global {
   interface Window {
@@ -18,6 +19,7 @@ declare global {
   },
 })
 export class LoginComponent {
+  lang = inject(LocalService)
   constructor() {
     afterNextRender(() => {
       window.particlesJS('particles-js', particlesConfig)

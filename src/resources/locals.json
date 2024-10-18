@@ -1,0 +1,38 @@
+{
+ "username": {
+  "ar": "اسم المستخدم",
+  "en": "username"
+ },
+ "password": {
+  "ar": "كلمة المرور",
+  "en": "password"
+ },
+ "local_key": {
+  "ar": "رمز التعريب",
+  "en": "Local key"
+ },
+ "login_to_your_account": {
+  "ar": "تسجل الدخول لحسابك",
+  "en": "login to your account"
+ },
+ "login": {
+  "ar": "تسجيل الدخول",
+  "en": "Login "
+ },
+ "arabic_local": {
+  "ar": "الترجمة العربية",
+  "en": "Arabic translation "
+ },
+ "english_local": {
+  "ar": "الترجمة الانجليزية",
+  "en": "English Trnaslation"
+ },
+ "save": {
+  "ar": "حفظ",
+  "en": "Save"
+ },
+ "localization": {
+  "ar": "التعريب",
+  "en": "Localization"
+ }
+}

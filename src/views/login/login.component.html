@@ -13,16 +13,16 @@
         <h1 class="text-2xl font-semibold">إدارة خدمة الارشفة الالكترونية</h1>
       </div>
       <form name="login" autocomplete="off" novalidate class="flex w-full items-stretch gap-4 flex-auto flex-col">
-        <span>سجل الدخول إلى حسابك</span>
+        <span>{{ lang.locals.login_to_your_account }}</span>
         <div class="flex gap-2 flex-col">
-          <label class="font-semibold" for="username">اسم المستخدم</label>
+          <label class="font-semibold" for="username">{{ lang.locals.username }}</label>
           <input
             type="text"
             class="border-white outline-none focus:ring-2 bg-gray-100 border rounded-md p-2"
             id="username" />
         </div>
         <div class="flex gap-2 flex-col">
-          <label class="font-semibold" for="password">كلمة المرور</label>
+          <label class="font-semibold" for="password">{{ lang.locals.password }}</label>
           <input
             type="password"
             class="border-white outline-none focus:ring-2 bg-gray-100 border rounded-md p-2"
@@ -30,7 +30,7 @@
         </div>
         <button
           class="bg-primary hover:bg-primary-900 active:bg-primary focus:ring-2 outline-none text-white mt-auto rounded-md p-2">
-          تسجل الدخول
+          {{ lang.locals.login }}
         </button>
       </form>
     </div>

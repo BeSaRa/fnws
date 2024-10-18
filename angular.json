@@ -17,7 +17,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["ar-QA"],
             "outputPath": "dist/fnws",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -109,6 +108,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
+            "exclude": ["src/locals/**/*.ts"],
             "lintFilePatterns": [
               "src/**/*.ts",
               "src/**/*.html"

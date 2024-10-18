@@ -15,7 +15,8 @@
     "lint": "ng lint",
     "prepare": "husky install",
     "version": "node bin/version.js",
-    "json:server": "npx json-server db/db.json"
+    "json:server": "npx json-server db/db.json",
+    "locals": "cd src/locals && npm run dev"
   },
   "private": true,
   "dependencies": {

@@ -10,9 +10,15 @@
           <path
             d="M224,52H32A12,12,0,0,0,20,64V88a12,12,0,0,0,12,12h4v92a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V100h4a12,12,0,0,0,12-12V64A12,12,0,0,0,224,52ZM212,192a4,4,0,0,1-4,4H48a4,4,0,0,1-4-4V100H212ZM228,88a4,4,0,0,1-4,4H32a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H224a4,4,0,0,1,4,4ZM100,136a4,4,0,0,1,4-4h48a4,4,0,0,1,0,8H104A4,4,0,0,1,100,136Z"></path>
         </svg>
-        <h1 class="text-2xl font-semibold">إدارة خدمة الارشفة الالكترونية</h1>
+        <h1 class="text-2xl font-semibold">{{ lang.locals.title }}</h1>
       </div>
-      <form name="login" autocomplete="off" novalidate class="flex w-full items-stretch gap-4 flex-auto flex-col">
+      <form
+        name="login"
+        autocomplete="off"
+        action="#"
+        (submit)="$event.preventDefault()"
+        novalidate
+        class="flex w-full items-stretch gap-4 flex-auto flex-col">
         <span>{{ lang.locals.login_to_your_account }}</span>
         <div class="flex gap-2 flex-col">
           <label class="font-semibold" for="username">{{ lang.locals.username }}</label>
@@ -29,11 +35,14 @@
             id="password" />
         </div>
         <button
+          (click)="login$.next()"
           class="bg-primary hover:bg-primary-900 active:bg-primary focus:ring-2 outline-none text-white mt-auto rounded-md p-2">
           {{ lang.locals.login }}
         </button>
       </form>
     </div>
-    <div class="bg-cover hidden md:flex items-start justify-center rounded-lg bg-bottom bg-inside"></div>
+    <div class="bg-cover hidden md:flex items-start justify-center rounded-lg bg-bottom bg-inside">
+      {{ loginProcess$ | async }}
+    </div>
   </div>
 </div>

@@ -9,4 +9,7 @@ export interface LangKeysContract {
   login_to_your_account: string
   login: string
   title: string
+  change_language: string
+  logout: string
+  logout_message: string
 }

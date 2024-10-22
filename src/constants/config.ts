@@ -5,7 +5,8 @@ export const Config = {
   BASE_URL: '',
   API_VERSION: '',
   EXTERNAL_PROTOCOLS: ['http', 'https'],
-  TOKEN_HEADER_KEY: 'Authorization',
+  TOKEN_HEADER_KEY: 'security.auth.header',
+  COOKIE_KEY: '__COOKIE__',
 }
 
 export type ConfigType = typeof Config

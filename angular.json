@@ -37,10 +37,7 @@
               "node_modules/particles.js/particles.js"
             ],
             "server": "src/main.server.ts",
-            "prerender": false,
-            "ssr": {
-              "entry": "server.ts"
-            },
+
             "externalDependencies": [""]
           },
           "configurations": {

@@ -1,0 +1,61 @@
+<div class="bg-primary text-white">
+  <div class="container m-auto p-3 flex items-center justify-between">
+    <h1>{{ lang.locals.title }}</h1>
+    <div class="flex">
+      <button [matTooltip]="lang.locals.change_language" (click)="lang.toggleLanguage()" mat-icon-button>
+        @if (lang.currentLanguage === 'ar') {
+          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M9,7V17H15V15H11V13H15V11H11V9H15V7H9Z" />
+          </svg>
+        } @else {
+          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 4C10.08 4 8.5 5.58 8.5 7.5C8.5 8.43 8.88 9.28 9.5 9.91C7.97 10.91 7 12.62 7 14.5C7 17.53 9.47 20 12.5 20C14.26 20 16 19.54 17.5 18.66L16.5 16.93C15.28 17.63 13.9 18 12.5 18C10.56 18 9 16.45 9 14.5C9 12.91 10.06 11.53 11.59 11.12L16.8 9.72L16.28 7.79L11.83 9C11.08 8.9 10.5 8.28 10.5 7.5C10.5 6.66 11.16 6 12 6C12.26 6 12.5 6.07 12.75 6.2L13.75 4.47C13.22 4.16 12.61 4 12 4Z" />
+          </svg>
+        }
+      </button>
+      <div class="flex items-center">
+        <button [matMenuTriggerFor]="menu" mat-icon-button>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z" />
+          </svg>
+        </button>
+        @if (store.user()) {
+          <button [matMenuTriggerFor]="menu">
+            <span class="hidden md:inline-block">{{ store.user()!.getNames(lang.currentLanguage) }}</span>
+          </button>
+        }
+        <mat-menu #menu="matMenu">
+          <button (click)="logout$.next()" mat-menu-item>
+            <div class="flex items-center">
+              <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>logout</title>
+                <path
+                  d="M17 7L15.59 8.41L18.17 11H8V13H18.17L15.59 15.58L17 17L22 12M4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z" />
+              </svg>
+              <span>{{ lang.locals.logout }}</span>
+            </div>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="bottom-header" class="flex">
+  <div class="container flex items-center justify-between bg-white m-auto p-3">
+    <a href="#" class="flex">
+      <img ngSrc="assets/images/state-logo.png" alt="logo" height="104" width="92" />
+      <img ngSrc="assets/images/moi-logo.png" alt="logo" height="104" priority width="169" />
+    </a>
+    <button class="sm:!hidden" mat-icon-button>
+      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <title>menu</title>
+        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+      </svg>
+    </button>
+    <ul class="hidden sm:!inline-block">
+      <li><a [routerLink]="['/login']">welcome</a></li>
+    </ul>
+  </div>
+</div>

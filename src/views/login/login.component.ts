@@ -5,6 +5,7 @@ import { AuthService } from '@/services/auth.service'
 import { exhaustMap, map, Subject, tap } from 'rxjs'
 import { AsyncPipe } from '@angular/common'
 import { ignoreErrors } from '@/utils/utils'
+import { Router } from '@angular/router'
 
 declare global {
   // noinspection JSUnusedGlobalSymbols
@@ -26,6 +27,7 @@ declare global {
 export class LoginComponent {
   lang = inject(LocalService)
   auth = inject(AuthService)
+  router = inject(Router)
   login$ = new Subject<void>()
   loginProcess$ = this.login$
     .pipe(
@@ -33,12 +35,12 @@ export class LoginComponent {
         this.auth
           .authenticate({
             username: 'admin',
-            password: 'password',
+            password: 'admin',
           })
           .pipe(ignoreErrors())
       )
     )
-    .pipe(tap(console.log))
+    .pipe(tap(() => this.router.navigate(['home']).then()))
     .pipe(map(() => ''))
 
   constructor() {

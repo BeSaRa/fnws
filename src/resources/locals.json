@@ -38,5 +38,17 @@
  "title": {
   "ar": "إدارة خدمة الارشفة الالكترونية",
   "en": "FileNet Archiving Service Administration"
+ },
+ "change_language": {
+  "ar": "تغير اللغة",
+  "en": "Change Language"
+ },
+ "logout": {
+  "ar": "تسجيل خروج ",
+  "en": "Logout"
+ },
+ "logout_message": {
+  "ar": "تم تسجيل الخروج بنجاح",
+  "en": "logged out successfully "
  }
 }

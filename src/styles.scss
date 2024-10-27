@@ -54,6 +54,7 @@ $fnws-theme: mat.define-theme(
   --mdc-dialog-container-shape: theme(borderRadius.md);
   --mat-dialog-container-max-width: unset;
   --mdc-protected-button-container-shape: theme(borderRadius.md);
+  --mat-table-header-headline-font: theme(fontFamily.lusail);
 }
 
 .mat-mdc-raised-button.primary:not(:disabled),

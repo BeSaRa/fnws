@@ -50,5 +50,81 @@
  "logout_message": {
   "ar": "تم تسجيل الخروج بنجاح",
   "en": "logged out successfully "
+ },
+ "users": {
+  "ar": "المستخدمين",
+  "en": "Users"
+ },
+ "arabic_name": {
+  "ar": "الاسم العربي",
+  "en": "Arabic Name"
+ },
+ "english_name": {
+  "ar": "الاسم الانجليزي",
+  "en": "English Name"
+ },
+ "email": {
+  "ar": "البريد الالكتروني",
+  "en": "Email"
+ },
+ "login_name": {
+  "ar": "اسم الدخول",
+  "en": "Login Name"
+ },
+ "status": {
+  "ar": "الحالة",
+  "en": "status"
+ },
+ "domain": {
+  "ar": "النطاق",
+  "en": "Domain"
+ },
+ "employee_number": {
+  "ar": "الرقم الوظيفي",
+  "en": "Employee Number"
+ },
+ "no_records_to_display": {
+  "ar": "لا يوجد بيانات لعرضها ",
+  "en": "No records to display"
+ },
+ "actions": {
+  "ar": "الاجرأت ",
+  "en": "Actions"
+ },
+ "edit_permissions": {
+  "ar": "تعديل الصلاحيات",
+  "en": "edit permissions"
+ },
+ "change_password": {
+  "ar": "تغير كلمة المرور",
+  "en": "Change password"
+ },
+ "change": {
+  "ar": "تغير",
+  "en": "change"
+ },
+ "close": {
+  "ar": "غلق",
+  "en": "Close"
+ },
+ "ldap_password": {
+  "ar": "كلمة مرور Ldap",
+  "en": "Ldap Password"
+ },
+ "app_password": {
+  "ar": "كلمة مرور التطبيق",
+  "en": "App Password"
+ },
+ "new_password": {
+  "ar": "كلمة المرور الجديد",
+  "en": "New Password"
+ },
+ "confirm_password": {
+  "ar": "تأكيد كلمة المرور",
+  "en": "Confirm password"
+ },
+ "application_name": {
+  "ar": "اسم التطبيق",
+  "en": "Application name"
  }
 }

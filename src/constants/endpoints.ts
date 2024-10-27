@@ -5,6 +5,7 @@ export const EndPoints = {
   AUTH: '/fnws/auth/login',
   LOGOUT: '/fnws/auth/logout',
   VALIDATE_TOKEN: '/fnws/auth/validate-token',
+  USERS: 'fnws/secure-user',
 }
 
 export type EndpointsType = typeof EndPoints

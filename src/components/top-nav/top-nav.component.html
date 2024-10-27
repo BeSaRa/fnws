@@ -55,7 +55,9 @@
       </svg>
     </button>
     <ul class="hidden sm:!inline-block">
-      <li><a [routerLink]="['/login']">welcome</a></li>
+      <li>
+        <a class="bg-primary text-white p-3 rounded-2xl" [routerLink]="['/login']">{{ lang.locals.users }}</a>
+      </li>
     </ul>
   </div>
 </div>

@@ -31,13 +31,13 @@
               "src/resources"
             ],
             "styles": [
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/particles.js/particles.js"
             ],
             "server": "src/main.server.ts",
-
             "externalDependencies": [""]
           },
           "configurations": {
@@ -45,8 +45,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

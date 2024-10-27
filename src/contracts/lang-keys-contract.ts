@@ -1,4 +1,9 @@
 export interface LangKeysContract {
+  application_name: string
+  confirm_password: string
+  new_password: string
+  app_password: string
+  ldap_password: string
   username: string
   password: string
   localization: string
@@ -12,4 +17,18 @@ export interface LangKeysContract {
   change_language: string
   logout: string
   logout_message: string
+  users: string
+  arabic_name: string
+  english_name: string
+  email: string
+  login_name: string
+  status: string
+  domain: string
+  employee_number: string
+  no_records_to_display: string
+  actions: string
+  edit_permissions: string
+  change_password: string
+  change: string
+  close: string
 }

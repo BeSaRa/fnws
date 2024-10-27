@@ -3,7 +3,7 @@
   <div [formGroup]="form" class="p-4 flex flex-col flex-auto">
     <mat-form-field class="w-full">
       <mat-label>{{ lang.locals.local_key }}</mat-label>
-      <input #key="matInput" formControlName="key" type="text" matInput />
+      <input formControlName="key" type="text" matInput />
       @if (form.controls.key.hasError('required')) {
         <mat-error>required</mat-error>
       }

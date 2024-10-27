@@ -12,18 +12,20 @@ import { LocalContract } from '@/contracts/local-contract'
 export class LocalService {
   private readonly http = inject(HttpClient)
   private readonly urlService = inject(UrlService)
-  locals: Record<keyof LangKeysContract, string> = {} as Record<keyof LangKeysContract, string>
+  locals: LangKeysContract = {} as LangKeysContract
   private declare localization: Record<keyof LangKeysContract, { ar: string; en: string }>
   currentLanguage: 'ar' | 'en' = 'ar'
   langChange$ = new BehaviorSubject<'ar' | 'en'>('ar')
   document = inject(DOCUMENT)
+  private readonly localFile = '/resources/locals.json'
+
   constructor() {
     this.listenToLanguageChange()
   }
 
   load(): Observable<Record<keyof LangKeysContract, { ar: string; en: string }>> {
     return this.http
-      .get<Record<keyof LangKeysContract, { ar: string; en: string }>>(this.urlService.URLS.LOCALS)
+      .get<Record<keyof LangKeysContract, { ar: string; en: string }>>(this.localFile)
       .pipe(tap(res => (this.localization = res)))
       .pipe(tap(() => this.prepareCurrentLocal()))
   }

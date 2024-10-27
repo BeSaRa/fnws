@@ -1,0 +1,56 @@
+{{ data$ | async }}
+<div class="p-3">
+  <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <!-- applicationName -->
+    <ng-container matColumnDef="applicationName">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.locals.application_name }}</th>
+      <td mat-cell *matCellDef="let element">
+        @for (app of element.getAppNames(); track app) {
+          <span class="block">{{ app }}</span>
+        }
+      </td>
+    </ng-container>
+    <!-- username -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.locals.username }}</th>
+      <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+    </ng-container>
+
+    <!-- actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.locals.actions }}</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          (click)="editUser$.next({ model: element, type: 'permissions' })"
+          [matTooltip]="lang.locals.edit_permissions"
+          mat-icon-button>
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z"></path>
+          </svg>
+        </button>
+        <button [matMenuTriggerFor]="changePassMenu" [matTooltip]="lang.locals.change_password" mat-icon-button>
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M48,56V200a8,8,0,0,1-16,0V56a8,8,0,0,1,16,0Zm92,54.5L120,117V96a8,8,0,0,0-16,0v21L84,110.5a8,8,0,0,0-5,15.22l20,6.49-12.34,17a8,8,0,1,0,12.94,9.4l12.34-17,12.34,17a8,8,0,1,0,12.94-9.4l-12.34-17,20-6.49A8,8,0,0,0,140,110.5ZM246,115.64A8,8,0,0,0,236,110.5L216,117V96a8,8,0,0,0-16,0v21l-20-6.49a8,8,0,0,0-4.95,15.22l20,6.49-12.34,17a8,8,0,1,0,12.94,9.4l12.34-17,12.34,17a8,8,0,1,0,12.94-9.4l-12.34-17,20-6.49A8,8,0,0,0,246,115.64Z"></path>
+          </svg>
+        </button>
+        <mat-menu #changePassMenu="matMenu">
+          <button (click)="editUser$.next({ model: element, type: 'ldapPassword' })" mat-menu-item>
+            {{ lang.locals.ldap_password }}
+          </button>
+          <button (click)="editUser$.next({ model: element, type: 'password' })" mat-menu-item>
+            {{ lang.locals.app_password }}
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="p-4" colspan="100">{{ lang.locals.no_records_to_display }}</td>
+    </tr>
+  </table>
+</div>

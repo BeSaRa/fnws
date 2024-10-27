@@ -12,6 +12,7 @@ export const routes: Routes = [
     path: 'home',
     canActivate: [authGuard],
     loadComponent: () => import('@/views/home/home.component').then(m => m.HomeComponent),
+    loadChildren: () => import('@/routes/home.routes').then(m => m.routes),
   },
   {
     path: '**',

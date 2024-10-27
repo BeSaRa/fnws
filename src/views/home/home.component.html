@@ -1,6 +1,6 @@
-<div class="w-screen h-screen flex flex-col">
-  <app-top-nav />
-  <div class="flex-auto bg-white m-auto container">
+<div class="w-screen h-screen overflow-hidden flex flex-col">
+  <app-top-nav class="flex-shrink-0 flex-grow-0" />
+  <div #container class="flex-auto bg-white m-auto min-h-0 overflow-hidden relative container">
     <router-outlet />
   </div>
 </div>

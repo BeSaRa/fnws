@@ -126,5 +126,69 @@
  "application_name": {
   "ar": "اسم التطبيق",
   "en": "Application name"
+ },
+ "password_not_match": {
+  "ar": "كلمات المرور غير متطابقة",
+  "en": "Passwords are not match"
+ },
+ "password_changed_successfully": {
+  "ar": "تم تغيير كملة المرور بنجاح",
+  "en": "Password has changed successfully"
+ },
+ "permission_change_successfully": {
+  "ar": "تم تعديل الصلاحيات بنجاح",
+  "en": "Permissions have changed successfully"
+ },
+ "permissions": {
+  "ar": "الصلاحيات",
+  "en": "Permissions"
+ },
+ "file_size": {
+  "ar": "حجم الملف",
+  "en": "File size"
+ },
+ "taskName": {
+  "ar": "اسم المهمة",
+  "en": "Task name"
+ },
+ "description": {
+  "ar": "الوصف",
+  "en": "Description"
+ },
+ "taskDate": {
+  "ar": "تاريخ المهمة",
+  "en": "Task date"
+ },
+ "exception": {
+  "ar": "استثناء",
+  "en": "Exception"
+ },
+ "result": {
+  "ar": "النتيجة",
+  "en": "Result"
+ },
+ "tasks": {
+  "ar": "المهام",
+  "en": "Tasks"
+ },
+ "all_tasks": {
+  "ar": "كل المهام",
+  "en": "All tasks"
+ },
+ "fail_tasks": {
+  "ar": "المهام الفاشلة",
+  "en": "Failed Tasks"
+ },
+ "success_tasks": {
+  "ar": "المهام الناجحة",
+  "en": "Success Tasks"
+ },
+ "tasks_filter": {
+  "ar": "تصفية المهام",
+  "en": "Tasks filter"
+ },
+ "clear": {
+  "ar": "مسح",
+  "en": "Clear"
  }
 }

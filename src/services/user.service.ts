@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { UrlService } from '@/services/url.service'
 import { Observable } from 'rxjs'
 import { CastResponse, CastResponseContainer } from 'cast-response'
@@ -35,5 +35,18 @@ export class UserService {
     return this.dialog.open(PasswordPopupComponent, {
       data: { model, type },
     })
+  }
+
+  private getUpdatePasswordUrl(type: 'ldapPassword' | 'password'): string {
+    const updatePasswordUrl = `${this.urlService.URLS.USERS}/update-password`
+    if (type === 'ldapPassword') {
+      return `${updatePasswordUrl}/ldap`
+    }
+    return updatePasswordUrl
+  }
+  updatePassword(model: SecureUser, newPassword: string, type: 'ldapPassword' | 'password'): Observable<SecureUser> {
+    const url = this.getUpdatePasswordUrl(type)
+    const param = new HttpParams().set('newPassword', newPassword)
+    return this.http.put<SecureUser>(url, model, { params: param })
   }
 }

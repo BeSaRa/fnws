@@ -55,8 +55,19 @@
       </svg>
     </button>
     <ul class="hidden sm:!inline-block">
-      <li>
-        <a class="bg-primary text-white p-3 rounded-2xl" [routerLink]="['/login']">{{ lang.locals.users }}</a>
+      <li class="flex gap-2">
+        <a
+          class="bg-primary-300 text-white p-3 rounded-2xl"
+          [routerLink]="['/home/tasks']"
+          routerLinkActive="!bg-primary"
+          >{{ lang.locals.tasks }}</a
+        >
+        <a
+          class="bg-primary-300 text-white p-3 rounded-2xl"
+          [routerLink]="['/home/users']"
+          routerLinkActive="!bg-primary"
+          >{{ lang.locals.users }}</a
+        >
       </li>
     </ul>
   </div>

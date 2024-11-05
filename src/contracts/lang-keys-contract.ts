@@ -31,4 +31,20 @@ export interface LangKeysContract {
   change_password: string
   change: string
   close: string
+  password_not_match: string
+  password_changed_successfully: string
+  permission_change_successfully: string
+  permissions: string
+  file_size: string
+  taskName: string
+  description: string
+  taskDate: string
+  exception: string
+  result: string
+  tasks: string
+  all_tasks: string
+  success_tasks: string
+  fail_tasks: string
+  tasks_filter: string
+  clear: string
 }

@@ -1,1 +1,47 @@
-<p>permissions-popup works!</p>
+<div class="flex flex-col overflow-hidden dialog-container">
+  <div class="bg-primary text-white text-xl p-4">{{ lang.locals.edit_permissions }} : {{ data.username }}</div>
+  @if (loading$ | async) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+  <form [formGroup]="permissionsForm">
+    <div class="p-4 flex flex-col flex-auto">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ lang.locals.file_size }}</mat-label>
+        <mat-select formControlName="fileSize">
+          @for (fileSize of fileSizeOptions; track fileSize) {
+            <mat-option [value]="fileSize">{{ fileSize }} MB</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="flex items-center">
+      <span class="text-lg font-semibold m-4">{{ lang.locals.permissions }}</span>
+      <mat-icon>tune</mat-icon>
+    </div>
+    @if (permissions$ | async; as permissionsList) {
+      <div
+        #permissionContainer
+        class="grid grid-cols-2 gap-4 bg-slate-200 p-4 mx-12 my-2 rounded-lg shadow-slate-400 shadow-md max-h-52 overflow-hidden relative">
+        <ng-container formArrayName="permissions">
+          @for (permission of permissionsList; track permission; let i = $index) {
+            <div [formGroupName]="i">
+              <mat-slide-toggle formControlName="assigned">
+                {{ permission.getNames(lang.currentLanguage) }}
+              </mat-slide-toggle>
+            </div>
+          }
+        </ng-container>
+      </div>
+    }
+  </form>
+  <div class="p-4 space-x-4 rtl:space-x-reverse grid grid-cols-2 justify-items-center">
+    <button (click)="save.next()" mat-fab extended mat-raised-button class="primary w-5/12">
+      <mat-icon>done_all</mat-icon>
+      {{ lang.locals.change }}
+    </button>
+    <button (click)="close()" mat-fab extended mat-raised-button class="w-5/12">
+      <mat-icon>close</mat-icon>
+      {{ lang.locals.close }}
+    </button>
+  </div>
+</div>

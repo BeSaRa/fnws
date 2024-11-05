@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core'
 import { LocalService } from '@/services/local.service'
 import { MatIconButton } from '@angular/material/button'
 import { NgOptimizedImage } from '@angular/common'
-import { Router, RouterLink } from '@angular/router'
+import { Router, RouterLink, RouterLinkActive } from '@angular/router'
 import { AppStore } from '@/stores/app.store'
 import { MatTooltip } from '@angular/material/tooltip'
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu'
@@ -15,7 +15,16 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 @Component({
   selector: 'app-top-nav',
   standalone: true,
-  imports: [MatIconButton, NgOptimizedImage, RouterLink, MatTooltip, MatMenuTrigger, MatMenu, MatMenuItem],
+  imports: [
+    MatIconButton,
+    NgOptimizedImage,
+    RouterLink,
+    MatTooltip,
+    MatMenuTrigger,
+    MatMenu,
+    MatMenuItem,
+    RouterLinkActive,
+  ],
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.scss',
 })

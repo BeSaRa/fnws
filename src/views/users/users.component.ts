@@ -1,5 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core'
+import { SecureUser } from '@/models/secure-user'
+import { LocalService } from '@/services/local.service'
 import { UserService } from '@/services/user.service'
+import { AsyncPipe } from '@angular/common'
+import { Component, inject, OnInit } from '@angular/core'
+import { MatIconButton } from '@angular/material/button'
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu'
 import {
   MatCell,
   MatCellDef,
@@ -14,13 +19,8 @@ import {
   MatTable,
   MatTableDataSource,
 } from '@angular/material/table'
-import { BehaviorSubject, exhaustMap, filter, map, Subject, switchMap, tap } from 'rxjs'
-import { AsyncPipe } from '@angular/common'
-import { LocalService } from '@/services/local.service'
-import { MatIconButton } from '@angular/material/button'
 import { MatTooltip } from '@angular/material/tooltip'
-import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu'
-import { SecureUser } from '@/models/secure-user'
+import { BehaviorSubject, exhaustMap, filter, map, Subject, switchMap, tap } from 'rxjs'
 
 @Component({
   selector: 'app-users',

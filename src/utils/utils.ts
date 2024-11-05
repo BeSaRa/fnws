@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { FormControlDirective, FormControlName, NgModel } from '@angular/forms'
-import { catchError, filter, MonoTypeOperatorFunction, Observable, of } from 'rxjs'
+import { catchError, defer, filter, finalize, MonoTypeOperatorFunction, Observable, of, Subject } from 'rxjs'
 
 /**
  * to check if the NgControl is NgModel
@@ -42,6 +42,22 @@ export function ignoreErrors<T>(debug = false): MonoTypeOperatorFunction<T> {
       )
       .pipe(filter<T>((value): value is T => value !== 'CUSTOM_ERROR'))
   }
+}
+
+export function indicate<T>(indicator: Subject<boolean>): (source: Observable<T>) => Observable<T> {
+  return (source: Observable<T>): Observable<T> =>
+    source.pipe(
+      prepare(() => indicator.next(true)),
+      finalize(() => indicator.next(false))
+    )
+}
+
+export function prepare<T>(callback: () => void): (source: Observable<T>) => Observable<T> {
+  return (source: Observable<T>): Observable<T> =>
+    defer(() => {
+      callback()
+      return source
+    })
 }
 
 /**

@@ -24,6 +24,8 @@
           <label class="font-semibold" for="username">{{ lang.locals.username }}</label>
           <input
             type="text"
+            name="username"
+            [(ngModel)]="credentials.username"
             class="border-white outline-none focus:ring-2 bg-gray-100 border rounded-md p-2"
             id="username" />
         </div>
@@ -31,6 +33,8 @@
           <label class="font-semibold" for="password">{{ lang.locals.password }}</label>
           <input
             type="password"
+            name="password"
+            [(ngModel)]="credentials.password"
             class="border-white outline-none focus:ring-2 bg-gray-100 border rounded-md p-2"
             id="password" />
         </div>

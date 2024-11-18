@@ -6,6 +6,7 @@ import { exhaustMap, map, Subject, tap } from 'rxjs'
 import { AsyncPipe } from '@angular/common'
 import { ignoreErrors } from '@/utils/utils'
 import { Router } from '@angular/router'
+import { FormsModule } from '@angular/forms'
 
 declare global {
   // noinspection JSUnusedGlobalSymbols
@@ -17,7 +18,7 @@ declare global {
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
   host: {
@@ -29,17 +30,12 @@ export class LoginComponent {
   auth = inject(AuthService)
   router = inject(Router)
   login$ = new Subject<void>()
+  credentials = {
+    username: '',
+    password: '',
+  }
   loginProcess$ = this.login$
-    .pipe(
-      exhaustMap(() =>
-        this.auth
-          .authenticate({
-            username: 'admin',
-            password: 'admin',
-          })
-          .pipe(ignoreErrors())
-      )
-    )
+    .pipe(exhaustMap(() => this.auth.authenticate(this.credentials).pipe(ignoreErrors())))
     .pipe(tap(() => this.router.navigate(['home']).then()))
     .pipe(map(() => ''))
 
